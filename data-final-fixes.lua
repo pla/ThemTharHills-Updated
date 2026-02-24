@@ -43,14 +43,14 @@ end
 
 if mods["248k-Redux"] then
   if mods["space-exploration"] then
-    removeProdmodAllowed("fu_gold_plate_recipe")
+    removeProdmodAllowed("fu_gold_plate")
   else
     if parts.bz.gold then
-      removeProdmodAllowed("fu_gold_ingot_recipe")
-      removeProdmodAllowed("fu_gold_plate_recipe")
+      removeProdmodAllowed("fu_gold_ingot")
+      removeProdmodAllowed("fu_gold_plate")
     end
   end
-  removeProdmodAllowed("gr_gold_wire_recipe")
+  removeProdmodAllowed("gr_gold_wire")
 end
 
 for k, v in pairs(data.raw["map-gen-presets"]["default"]) do

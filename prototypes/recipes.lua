@@ -101,7 +101,7 @@ data:extend({
     enabled = false,
     energy_required = 6,
     ingredients = tf.compilePrereqs{{type="item", name="advanced-circuit", amount=5}, {type="item", name="advanced-cable", amount=2}, {type="item", name="battery", amount=2}, 
-      parts.preferred({"cooling-fan", "aluminum-plate", "galvanized-steel-plate", "steel-plate"}, {1, 5, 1, 1}), parts.optionalIngredient("el_energy_crystal_item", 1), parts.optionalIngredient("acsr-cable", 1)},
+      parts.preferred({"cooling-fan", "aluminum-plate", "galvanized-steel-plate", "steel-plate"}, {1, 5, 1, 1}), parts.optionalIngredient("el_energy_crystal", 1), parts.optionalIngredient("acsr-cable", 1)},
     results = {{type="item", name="hv-power-regulator", amount=1}},
   },
   {
