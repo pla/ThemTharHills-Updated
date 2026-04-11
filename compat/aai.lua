@@ -86,7 +86,7 @@ if mods["space-exploration"] then
   rm.ReplaceProportional("se-machine-learning-data", "electronic-circuit", "integrated-circuit", 1/2)
 
   if data.raw.item["advanced-flow-controller"] then
-    rm.ReplaceProportional("advanced-flow-controller-vitalic", "advanced-circuit", "integrated-circuit", 1)
+    rm.ReplaceProportional("advanced-flow-controller-biological", "advanced-circuit", "integrated-circuit", 1)
   end
 
   rm.AddIngredient("se-rocket-launch-pad", "hv-power-regulator", 50)
