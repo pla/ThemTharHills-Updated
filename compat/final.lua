@@ -60,7 +60,7 @@ if parts.bz.gold and mods["space-exploration"] then
   rm.ReplaceProportional("cpu-holmium", "gold-ingot", parts.gold, 1)
   rm.ReplaceProportional("mainboard-holmium", "gold-ingot", parts.gold, 1)
   --already uses gold via ICs
-  tf.removeRecipeUnlock("se-space-data-card", "se-data-empty-gold")
+  data.raw.recipe["se-empty-data-gold"].hidden = true
 end
 
 cu.moveItem("copper-cable", "cable", "a")
