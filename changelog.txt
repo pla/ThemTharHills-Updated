@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.11
-Date: ????
+Date: 2026-06-03
   Changes:
+    - Fixed Advanced Flow Controller recipe ingredient name (Morganite)
+    - Hide inaccessible recipe for blank data cards instead of removing pre-reqs (Morganite)
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.10
 Date: 2026-03-15
