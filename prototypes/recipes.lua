@@ -10,7 +10,7 @@ data:extend({
   {
     type = "recipe",
     name = "gold-powder",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 1,
     ingredients = {{type="item", name="gold-ore", amount=1}, {type="fluid", name=parts.aquaregia and "aqua-regia" or (mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid"), amount=10}},
@@ -38,7 +38,7 @@ data:extend({
         shift = {-8, -8}
       }
     },
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 3,
     localised_name = {"recipe-name.trace-gold-from-copper"},
@@ -59,7 +59,7 @@ data:extend({
   {
     type = "recipe",
     name = "gold-plate",
-    category = "smelting",
+    categories = {"smelting"},
     enabled = false,
     energy_required = 3.2,
     ingredients = {{type="item", name="gold-powder", amount=3}},
@@ -68,7 +68,7 @@ data:extend({
   {
     type = "recipe",
     name = "gold-wire",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 0.5,
     ingredients = {{type="item", name=parts.gold, amount=1}},
@@ -78,7 +78,7 @@ data:extend({
   {
     type = "recipe",
     name = "transceiver",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 2,
     ingredients = tf.compilePrereqs{{type="item", name="electronic-circuit", amount=3}, {type="item", name=parts.wire, amount=5}, 
@@ -88,7 +88,7 @@ data:extend({
   {
     type = "recipe",
     name = "advanced-cable",
-    category = "advanced-crafting",
+    categories = {"advanced-crafting"},
     enabled = false,
     energy_required = 3,
     ingredients = {parts.preferred({"silver-wire", "tinned-cable", "copper-cable"}, {3, 1, 1}), {type="item", name=parts.wire, amount=6}, {type="item", name="plastic-bar", amount=3}},
@@ -97,7 +97,7 @@ data:extend({
   {
     type = "recipe",
     name = "hv-power-regulator",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 6,
     ingredients = tf.compilePrereqs{{type="item", name="advanced-circuit", amount=5}, {type="item", name="advanced-cable", amount=2}, {type="item", name="battery", amount=2}, 
@@ -107,7 +107,7 @@ data:extend({
   {
     type = "recipe",
     name = "integrated-circuit",
-    category = "advanced-crafting",
+    categories = {"advanced-crafting"},
     enabled = false,
     energy_required = 1,
     ingredients = tf.compilePrereqs{{type="item", name="plastic-bar", amount=1}, {type="item", name=parts.gold, amount=2}, parts.preferred({"ll-silicon", "silicon-wafer", mods["Krastorio2"] and "kr-silicon" or "silicon", "copper-plate"}, {2, 1, 2, 2})},
@@ -121,7 +121,7 @@ if parts.aquaregia then
     {
       type = "recipe",
       name = "aqua-regia",
-      category = "chemistry",
+      categories = {"chemistry"},
       enabled = false,
       energy_required = 1,
       subgroup = "fluid-recipes",
@@ -158,7 +158,7 @@ if parts.bz.gold and data.raw.item["silver-plate"] and rm.CheckIngredient("integ
           shift = {8, -8}
         }
       },
-      category = "advanced-crafting",
+      categories = {"advanced-crafting"},
       enabled = false,
       energy_required = 1,
       ingredients = {{type="item", name="plastic-bar", amount=1}, {type="item", name=parts.gold, amount=2}, {type="item", name="silver-plate", amount=2}},
@@ -197,7 +197,7 @@ if mods["Krastorio2"] then
           scale = 0.25
         }
       },
-      category = "chemistry",
+      categories = {"chemistry"},
       subgroup = "fluid-recipes",
       order = "y03[ammonia]alt",
       enabled = false,
@@ -259,7 +259,7 @@ if mods["Krastorio2"] then
             shift = {-8, -8}
           }
         },
-        category = "chemistry",
+        categories = {"chemistry"},
         subgroup = "fluid-recipes",
         order = "y04[nitric-acid]alt",
         enabled = false,
@@ -276,7 +276,7 @@ if mods["Krastorio2"] then
       {
         type = "recipe",
         name = "gold-wire-s-c",
-        category = "smelting",
+        categories = {"smelting"},
         enabled = false,
         energy_required = 1,
         ingredients = {{type="item", name="gold-powder", amount=3}},
@@ -304,7 +304,7 @@ else
     {
       type = "recipe",
       name = "nitric-acid",
-      category = "chemistry",
+      categories = {"chemistry"},
       enabled = false,
       energy_required = 1,
       subgroup = "fluid-recipes",
@@ -339,7 +339,7 @@ if mods["space-exploration"] then
         icon_size = 64,
         subgroup = "gold",
         name = "molten-gold",
-        category = "smelting",
+        categories = {"smelting"},
         energy_required = 60,
         ingredients = {{type="item", name="gold-powder", amount=72}, {type="fluid", name="se-pyroflux", amount=10}},
         results = {{type="fluid", name="molten-gold", amount=900}},
@@ -348,7 +348,7 @@ if mods["space-exploration"] then
       {
         type = "recipe",
         name = "gold-ingot",
-        category = "casting",
+        categories = {"casting"},
         energy_required = 25,
         ingredients = {{type="fluid", name="molten-gold", amount=250}},
         results = {{type="item", name="gold-ingot", amount=1}},
@@ -362,7 +362,7 @@ if mods["space-exploration"] then
           { icon = "__ThemTharHills-Updated__/graphics/icons/gold-plate.png", icon_size = 64 },
           { icon = "__ThemTharHills-Updated__/graphics/icons/gold-ingot.png", icon_size = 64, scale=0.25, shift= {-8, -8}},
         },
-        category = "crafting",
+        categories = {"crafting"},
         energy_required = 5,
         ingredients = {{type="item", name="gold-ingot", amount=1}},
         results = {{type="item", name=parts.gold, amount=10}},
@@ -378,7 +378,7 @@ if mods["FreightForwarding"] then
     {
       type = "recipe",
       name = "noble-nodule-dredging",
-      category = "ff-dredging",
+      categories = {"ff-dredging"},
       energy_required = 50,
       ingredients = {},
       results = {{type="item", name="noble-nodule", amount_min=75, amount_max=150}},
@@ -389,7 +389,7 @@ if mods["FreightForwarding"] then
     {
       type = "recipe",
       name = "noble-nodule-washing",
-      category = "chemistry",
+      categories = {"chemistry"},
       energy_required = 15,
       allow_decomposition = false,
       ingredients = {{type="item", name="noble-nodule", amount=18}, {type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=15}},
@@ -413,7 +413,7 @@ if mods["LunarLandings"] then
       {
         type = "recipe",
         name = "cheese-ore-processing",
-        category = "ll-electric-smelting",
+        categories = {"ll-electric-smelting"},
         subgroup = "ll-raw-material-moon",
         order = "a[moon-rock]-c",
         icon = "__ThemTharHills-Updated__/graphics/icons/cheese-ore.png",
@@ -430,7 +430,7 @@ if mods["LunarLandings"] then
     {
       type = "recipe",
       name = "entangled-transceiver",
-      category = "ll-quantum-resonating",
+      categories = {"ll-quantum-resonating"},
       localised_name = { "recipe-name.entangled-transceiver" },
       icons = {
         {
