@@ -6,9 +6,9 @@ local cu = require("category-utils")
 --this gets changed between so do it last instead of in the main krastorio part
 if mods["Krastorio2"] then
   if mods["aai-industry"] then
-    rm.AddProductRaw("sand", {type="item", name="potassium-nitrate", amount=1, probability=0.05})
+    rm.AddProductRaw("sand", {type="item", name="potassium-nitrate", amount=1, independent_probability=0.05})
   end
-  rm.AddProductRaw("kr-sand", {type="item", name="potassium-nitrate", amount=1, probability=0.15})
+  rm.AddProductRaw("kr-sand", {type="item", name="potassium-nitrate", amount=1, independent_probability=0.15})
 end
 
 if mods["space-exploration"] then

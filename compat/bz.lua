@@ -31,20 +31,20 @@ if parts.bz.gold then
   if data.raw.item["silver-ore"] then
     -- default chance of silver from gold processing in bzgold is 20% per 2 ore.
     -- TTH gold is worth less per item so processing 1 TTH gold should be less than half of 2 BZG gold
-    rm.AddProductRaw("gold-powder", {type="item", name="silver-ore", amount=1, probability=mods["Krastorio2"] and 0.1 or 0.05})
-    rm.AddProductRaw("depleted-acid-treatment", {type="item", name="silver-ore", amount=1, probability=0.1})
+    rm.AddProductRaw("gold-powder", {type="item", name="silver-ore", amount=1, independent_probability=mods["Krastorio2"] and 0.1 or 0.05})
+    rm.AddProductRaw("depleted-acid-treatment", {type="item", name="silver-ore", amount=1, independent_probability=0.1})
     -- default chance of silver is 10% per 1 copper. recipe uses 3 but is intentionally somewhat wasteful
-    rm.AddProductRaw("trace-gold-from-copper", {type="item", name="silver-ore", amount=1, probability=0.2})
+    rm.AddProductRaw("trace-gold-from-copper", {type="item", name="silver-ore", amount=1, independent_probability=0.2})
   end
 
   if mods["space-exploration"] then
 
     if data.raw.item["rich-copper-ore"] then
       --add a bad way to make rich copper ore on nauvis to prevent deadlock
-      --this is an ill-considered giant hammer solution and probably sucks!
+      --this is an ill-considered giant hammer solution and independent_probably sucks!
       --then again it is making the already-not-great recipe more viable by adding extra products
-      rm.AddProductRaw("trace-gold-from-copper", {type="item", name="rich-copper-ore", amount=1, probability=0.1})
-      rm.AddProductRaw("depleted-acid-treatment", {type="item", name="rich-copper-ore", amount=1, probability=0.05})
+      rm.AddProductRaw("trace-gold-from-copper", {type="item", name="rich-copper-ore", amount=1, independent_probability=0.1})
+      rm.AddProductRaw("depleted-acid-treatment", {type="item", name="rich-copper-ore", amount=1, independent_probability=0.05})
     end
     tf.removeSciencePack("platinum-processing", "se-rocket-science-pack")
     tf.removePrereq("platinum-processing", "se-rocket-science-pack")
