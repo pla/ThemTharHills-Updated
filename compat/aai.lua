@@ -42,9 +42,12 @@ if mods["space-exploration"] then
   if settings.startup["themtharhills-se-maintenance"].value and ((not mods["IfNickel-Updated"]) or (mods["IfNickel-Updated"] and not (data.raw.item["nickel-electromagnet"] and settings.startup["ifnickel-se-maintenance"].value))) then
     local function add_catalyst(recipe, ingredient, amount, losschance, scrap, scrap_amount)
       rm.AddIngredient(recipe, ingredient, amount)
-      rm.AddProductRaw(recipe, {type="item", name=ingredient, amount=amount, independent_probability=1.0 - losschance, ignored_by_productivity=amount, ignored_by_stats=amount})
       if scrap then
-        rm.AddProductRaw(recipe, {type="item", name=scrap, amount=scrap_amount, independent_probability=losschance})
+        local chance = 1.0 - losschance
+        rm.AddProductRaw(recipe, {type="item", name=ingredient, amount=amount, shared_probability = {min = 0, max = chance}, ignored_by_productivity=amount, ignored_by_stats=amount})
+        rm.AddProductRaw(recipe, {type="item", name=scrap, amount=scrap_amount, shared_probability = {min = chance, max = 1}})
+      else
+        rm.AddProductRaw(recipe, {type="item", name=ingredient, amount=amount, independent_probability=1.0 - losschance, ignored_by_productivity=amount, ignored_by_stats=amount})
       end
     end
     -- Research. 25% magnet fail chance
