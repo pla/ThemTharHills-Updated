@@ -6,6 +6,7 @@ Date: ????
       - change category to categories in recipes
       - change probability to independent_probability
       - change data.raw.tool to data.raw.item
+      - use shared_probabilty for se scrap where appropriate
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.11
 Date: 2026-06-03
